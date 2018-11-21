@@ -6,11 +6,24 @@
 .site_content {
     flex: 1;
 }
-footer{
-    background-color: Highlight !important;
+footer {
+    background-color: #79589F !important;
 }
-.navbar{
-    background-color: Highlight !important;
+.navbar {
+    background-color: #79589F !important;
+}
+
+.navbar a{
+    color: white !important;
+}
+
+footer a {
+    font-weight: bold !important;
+    color: white !important;
+}
+
+footer div{
+    color: white !important;
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
