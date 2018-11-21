@@ -1,8 +1,17 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-
+.site_content {
+    flex: 1;
+}
+footer{
+    background-color: Highlight !important;
+}
+.navbar{
+    background-color: Highlight !important;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
