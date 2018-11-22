@@ -214,6 +214,7 @@
     <Content Include="Pictures\logo3.png" />
     <Content Include="Pictures\logo4.png" />
     <Content Include="Pictures\logo5.png" />
+    <Content Include="Pictures\logosvg.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
