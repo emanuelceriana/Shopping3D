@@ -8,11 +8,12 @@ namespace Shopping3D.Models
 {
     public class DbContexto : DbContext
     {
-        public DbContexto() : base("cn")
+        public DbContexto() 
+            :base("Shopping3D")
         {
 
         }
 
-        //public DbSet<Producto> Productos {get;set;}
+        public DbSet<Product> Products { get; set;}
     }
 }
