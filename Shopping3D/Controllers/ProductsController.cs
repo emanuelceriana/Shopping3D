@@ -17,7 +17,7 @@ namespace Shopping3D.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            return View(db.Products.ToList());
+            return View(db.Products.ToList().OrderBy(x => x.Name));
         }
 
         // GET: Products/Details/5

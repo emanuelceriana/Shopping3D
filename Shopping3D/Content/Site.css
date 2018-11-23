@@ -50,7 +50,10 @@ footer div {
     /*padding: 0.5rem 4.5rem !important;*/
 }
 
+.card-img-top {
+    max-width: 250px;
 
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
