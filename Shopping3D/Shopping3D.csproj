@@ -226,6 +226,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Pictures\logo.jpg" />
+    <Content Include="Pictures\logo2.png" />
+    <Content Include="Pictures\logo3.png" />
+    <Content Include="Pictures\logo4.png" />
+    <Content Include="Pictures\logo5.png" />
+    <Content Include="Pictures\logosvg.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -287,26 +293,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Clients\Create.cshtml" />
-    <Content Include="Views\Clients\Delete.cshtml" />
-    <Content Include="Views\Clients\Details.cshtml" />
-    <Content Include="Views\Clients\Edit.cshtml" />
-    <Content Include="Views\Clients\Index.cshtml" />
-    <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Sales\Create.cshtml" />
-    <Content Include="Views\Sales\Delete.cshtml" />
-    <Content Include="Views\Sales\Details.cshtml" />
-    <Content Include="Views\Sales\Edit.cshtml" />
-    <Content Include="Views\Sales\Index.cshtml" />
-    <Content Include="Views\SaleLines\Create.cshtml" />
-    <Content Include="Views\SaleLines\Delete.cshtml" />
-    <Content Include="Views\SaleLines\Details.cshtml" />
-    <Content Include="Views\SaleLines\Edit.cshtml" />
-    <Content Include="Views\SaleLines\Index.cshtml" />
+    <Content Include="Views\Shared\_Shim.cshtml" />
+    <Content Include="Views\Shared\_Jscript.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
