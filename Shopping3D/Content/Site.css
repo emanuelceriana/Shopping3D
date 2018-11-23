@@ -50,8 +50,15 @@ footer div {
     /*padding: 0.5rem 4.5rem !important;*/
 }
 
-.card-img-top {
-    max-width: 250px;
+.btn-carrito {
+    background-color: #79589F;
+    color: white;
+    width: 100%;
+}
+
+.btn-carrito:hover {
+    color: white !important;
+    /*font-weight: bold !important;  */
 
 }
 /* Set padding to keep content from hitting the edges */
