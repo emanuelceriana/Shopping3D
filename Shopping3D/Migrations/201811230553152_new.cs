@@ -23,10 +23,10 @@ namespace Shopping3D.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Total = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Date = c.DateTime(nullable: false),
-                        Client_Id = c.Int(),
+                        Client_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Clients", t => t.Client_Id)
+                .ForeignKey("dbo.Clients", t => t.Client_Id, cascadeDelete: true)
                 .Index(t => t.Client_Id);
             
             CreateTable(
@@ -36,10 +36,10 @@ namespace Shopping3D.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         ProductQuantity = c.Int(nullable: false),
                         SubTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Sale_Id = c.Int(),
+                        Sale_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Sales", t => t.Sale_Id)
+                .ForeignKey("dbo.Sales", t => t.Sale_Id, cascadeDelete: true)
                 .Index(t => t.Sale_Id);
             
             CreateTable(
@@ -53,10 +53,10 @@ namespace Shopping3D.Migrations
                         Currency = c.Int(nullable: false),
                         Image = c.String(maxLength: 50),
                         Quantity = c.Int(nullable: false),
-                        SaleLine_Id = c.Int(),
+                        SaleLine_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.SaleLines", t => t.SaleLine_Id)
+                .ForeignKey("dbo.SaleLines", t => t.SaleLine_Id, cascadeDelete: true)
                 .Index(t => t.SaleLine_Id);
             
         }
