@@ -14,8 +14,8 @@ namespace Shopping3D.Models
         [Required]
         public decimal SubTotal { get; set; }
 
-        
-        public ICollection<Product> Product { get; set; }
+        [Required]
+        public Product Product { get; set; }
         [Required]
         public Sale Sale { get; set; }
     }

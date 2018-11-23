@@ -22,9 +22,5 @@ namespace Shopping3D.Models
         public string Image{ get; set; }
         [Required]
         public int Quantity { get; set; }
-        
-        [Required]
-        public SaleLine SaleLine { get; set; }
-
     }
 }
