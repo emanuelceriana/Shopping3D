@@ -8,13 +8,23 @@ namespace Shopping3D.Models
 {
     public class Product
     {
-        public int ProductId { get; set; }
+        public int Id { get; set; }
         [Required]
         [StringLength(30)]
         public string Name { get; set; }
         [StringLength(50)]
         public string Description { get; set; }
         [Required]
-        public float Price { get; set; }
+        public decimal Price { get; set; }
+        [Required]
+        public int Currency { get; set; }
+        [StringLength(50)]
+        public string Image{ get; set; }
+        [Required]
+        public int Quantity { get; set; }
+        
+        [Required]
+        public SaleLine SaleLine { get; set; }
+
     }
 }

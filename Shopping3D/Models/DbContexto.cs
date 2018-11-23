@@ -15,5 +15,8 @@ namespace Shopping3D.Models
         }
 
         public DbSet<Product> Products { get; set;}
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<SaleLine> SaleLines { get; set; }
     }
 }
