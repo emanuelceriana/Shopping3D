@@ -21,9 +21,6 @@ namespace Shopping3D.Controllers
 
         [HttpPost]
         public ActionResult Checkout(string email) {
-            MercadoPago.SDK.ClientId = "3120485104106115";
-            MercadoPago.SDK.ClientSecret = "QRjZLfXx5FWgcxynmlrEik8dsrpHKpGX";
-            
             if (Session["Cart"] != null) {
                 Session["Client"] = email;
                 Preference preference = new Preference();
@@ -47,7 +44,9 @@ namespace Shopping3D.Controllers
                 };
                 // Save and posting preference
                 BackUrls backUrls = new BackUrls();
-                backUrls.Success = "http://localhost:50266/Cart/Callback";
+                backUrls.Success = "http://localhost:50266/Cart/SuccessCallback";
+                backUrls.Pending = "http://localhost:50266/Cart/PendingCallback";
+                backUrls.Failure = "http://localhost:50266/Cart/FailureCallback";
                 preference.BackUrls = backUrls;
                 preference.Save();
                 return Redirect(preference.SandboxInitPoint);
@@ -56,9 +55,20 @@ namespace Shopping3D.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult Callback() {
-            return View();
+       
+        public ActionResult SuccessCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id) {
+            Sale Sale = new Sale();
+            foreach (var SaleLine in Session["Cart"] as List<SaleLine>)
+            {
+                
+            }
+
+            return View("Index");
+        }
+
+        public ActionResult PendingCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id)
+        {
+            return View("Callback");
         }
 
         // POST: Cart

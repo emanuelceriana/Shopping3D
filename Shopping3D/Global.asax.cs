@@ -18,6 +18,10 @@ namespace Shopping3D
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            MercadoPago.SDK.ClientId = "8473661908352573";
+            MercadoPago.SDK.ClientSecret = "IYtvKm4O8cZnDafaX2bCo5Dp5qiJHOw4";
+            
+
         }
     }
 }
