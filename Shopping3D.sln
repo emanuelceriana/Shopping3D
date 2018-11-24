@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.102
+VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping3D", "Shopping3D\Shopping3D.csproj", "{B17C56D2-7C82-42B4-A317-1FFA8051413E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "..\..\source\repos\WebApplication3\WebApplication3\WebApplication3.csproj", "{230E5E2E-EBF8-4CBB-92FD-28755FB14216}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,15 @@ Global
 		{B17C56D2-7C82-42B4-A317-1FFA8051413E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B17C56D2-7C82-42B4-A317-1FFA8051413E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B17C56D2-7C82-42B4-A317-1FFA8051413E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230E5E2E-EBF8-4CBB-92FD-28755FB14216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230E5E2E-EBF8-4CBB-92FD-28755FB14216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230E5E2E-EBF8-4CBB-92FD-28755FB14216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230E5E2E-EBF8-4CBB-92FD-28755FB14216}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {79D398D7-3FE8-4334-95BD-5F91A5546D39}
+		SolutionGuid = {ABAFFE7C-895E-4521-B005-A12EC72E4927}
 	EndGlobalSection
 EndGlobal

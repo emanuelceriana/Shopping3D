@@ -14,9 +14,15 @@
                     <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
                     <p class="card-text">@Html.DisplayFor(modelItem => item.Price)</p>
                 </div>
-                <div class="card-footer">
-                    @Html.ActionLink("Add to Cart", "Add", "Cart", new { id = item.Id }, new {@class = "btn btn-info" })
-                </div>
+                @using (Html.BeginForm("Add", "Cart"))
+                {
+                    <input type="hidden" name="id" value="@item.Id" id="hdnFlag" />
+                    <input name="quantity" type="number" value="1" />
+                    <div class="card-footer">
+                        <input type="submit" value="Add to Cart" id="btnSubmit" />
+                    </div>
+                }
+
             </div>
         </div>
 

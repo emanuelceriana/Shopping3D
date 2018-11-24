@@ -8,6 +8,12 @@ namespace Shopping3D.Models
 {
     public class SaleLine
     {
+        public SaleLine(Product Product, int ProductQuantity, decimal SubTotal) {
+            this.Product = Product;
+            this.ProductQuantity = ProductQuantity;
+            this.SubTotal = SubTotal;
+        }
+
         public int Id { get; set; }
         [Required]
         public int ProductQuantity { get; set; }

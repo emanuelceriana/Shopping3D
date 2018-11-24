@@ -1,0 +1,25 @@
+﻿@model List<Shopping3D.Models.SaleLine>
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Cart</h2>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <h1>@item.Product.Name</h1>
+        <h1>@item.ProductQuantity</h1>
+        <h1>@item.SubTotal</h1>
+    }
+
+    using (Html.BeginForm("Checkout", "Cart"))
+    {
+        <input type="email" name="email" placeholder="name@example.com" />
+        <div class="card-footer">
+            <input type="submit" value="Buy" id="btnSubmit"/>
+        </div>
+    }
+}
+
