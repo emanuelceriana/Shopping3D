@@ -1,4 +1,4 @@
-﻿/*.site {
+﻿.site {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -6,7 +6,7 @@
 
 .site_content {
     flex: 1;
-}*/
+}
 
 footer {
     background-color: #79589F !important;
@@ -57,11 +57,13 @@ footer div {
     width: 100%;
 }
 
-.btn-volver {
+.btn-volver, .btn-volver:hover {
     background-color: #514A9C;
-    color: white;
+    color: white !important;
     width: 100%;
 }
+
+
 
 .btn-carrito:hover {
     color: white !important;
@@ -122,6 +124,47 @@ footer div {
     font-size: 1rem !important;
     font-weight: bold !important;
 }
+
+input{
+    max-width: unset !important;
+}
+
+#img-table{
+    width: 100px;
+    height: 100px;
+}
+
+.table th, .table td{
+
+    vertical-align: unset !important;
+}
+
+th {
+    background-color: #79589F !important;
+}
+
+.buy{
+    max-width: 500px;
+}
+
+.btnCart{
+    font-size: 30px;
+}
+
+.btnCart:hover{
+    text-decoration: none;
+}
+
+.total {
+    text-align: right;
+    margin-right: 65px;
+}
+
+.total p{
+    font-size: 20px;
+    
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

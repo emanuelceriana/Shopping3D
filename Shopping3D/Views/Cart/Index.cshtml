@@ -1,25 +1,65 @@
 ﻿@model List<Shopping3D.Models.SaleLine>
 @{
     ViewBag.Title = "Checkout";
+    decimal total = 0;
 }
+<br />
+<br />
 
-<h2>Cart</h2>
-
-@if (Model != null)
+@if (Model != null && Model.Count != 0)
 {
-    foreach (var item in Model)
-    {
-        <h1>@item.Product.Name</h1>
-        <h1>@item.ProductQuantity</h1>
-        <h1>@item.SubTotal</h1>
-    }
+<div class="container">
+    
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Item</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+                <th></th>
 
-    using (Html.BeginForm("Checkout", "Cart"))
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                {total = total + item.SubTotal;}
+                <tr>
+                    <td><img id="img-table" src="@Url.Content(item.Product.Image)" alt="@item.Product.Name" /></td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.ProductQuantity</td>
+                    <td>@item.Product.Price</td>
+                    <td>@item.SubTotal</td>
+                    <td>@Html.ActionLink("X","Delete",new { @id = item.Id})</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+    <div class="container total">
+        <h3>Total</h3>
+        <p>$ @total</p>
+    </div>
+    <br />
+<div class="container buy">
+    @using (Html.BeginForm("Checkout", "Cart"))
     {
-        <input type="email" name="email" placeholder="name@example.com" />
-        <div class="card-footer">
-            <input type="submit" value="Buy" id="btnSubmit"/>
-        </div>
+        <p><input class="form-control " type="email" name="email" placeholder="tuemail@example.com" /></p>
+        <p><input type="submit" value="🛒 - Buy" id="btnSubmit" class="btn btn-carrito" /></p>
     }
+    <p>@Html.ActionLink("← Continue Shopping", "Index", "Products", new { }, new { @class = "btn btn-volver" })</p>
+</div>
+}
+else
+{
+<div class="container buy text-center">
+    <h2>Your cart is empty!</h2>
+    <br />  
+    <p>@Html.ActionLink("← Continue Shopping", "Index", "Products", new { }, new { @class = "btn btn-volver" })</p>
+</div>
 }
 
