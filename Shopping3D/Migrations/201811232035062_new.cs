@@ -3,7 +3,7 @@ namespace Shopping3D.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class _new : DbMigration
     {
         public override void Up()
         {
@@ -51,7 +51,7 @@ namespace Shopping3D.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 30),
-                        Description = c.String(maxLength: 50),
+                        Description = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Currency = c.Int(nullable: false),
                         Image = c.String(maxLength: 50),

@@ -175,9 +175,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811230822010_initial.cs" />
-    <Compile Include="Migrations\201811230822010_initial.Designer.cs">
-      <DependentUpon>201811230822010_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201811232035062_new.cs" />
+    <Compile Include="Migrations\201811232035062_new.Designer.cs">
+      <DependentUpon>201811232035062_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
@@ -225,6 +225,7 @@
     <Content Include="Pictures\logo3.png" />
     <Content Include="Pictures\logo4.png" />
     <Content Include="Pictures\logo5.png" />
+    <Content Include="Pictures\logo6.png" />
     <Content Include="Pictures\logosvg.svg" />
     <Content Include="Pictures\Products\p1.JPG" />
     <Content Include="Pictures\Products\p2.JPG" />
@@ -281,7 +282,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -313,12 +314,12 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811230822010_initial.resx">
-      <DependentUpon>201811230822010_initial.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Cart\" />
+    <EmbeddedResource Include="Migrations\201811232035062_new.resx">
+      <DependentUpon>201811232035062_new.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

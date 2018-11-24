@@ -3,64 +3,73 @@
 @{
     ViewBag.Title = "Details";
 }
+<br />
+<br />
+<div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+           
+        </div>
+    </div>
+    <!-- /.row -->
 
-<h2>Details</h2>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6 mb-4">
+            <h3 class="page-header text-center">@Model.Name</h3>
+            <!-- There's only One image -->
+            <div class="">
+                <div class="main-product-image">
+                    <img src="@Url.Content(Model.Image)" alt="@Model.Name" class="img-fluid">
+                </div>
+            </div>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="col-sm-12">
+                <form class="form-horizontal" action="/5" method="post" enctype="multipart/form-data" name="buy">
+                    <div>
+                        
+                        <!-- Product Price  -->
+                        <div class="form-group price_elem row">
+                            <label class="col-sm-3 col-md-3 form-control-label nopaddingtop">Price:</label>
+                            <div class="col-sm-8 col-md-9">
+                                <span class="product-form-price" id="product-form-price">$ @Model.Price</span>
+                            </div>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-md-3 form-control-label">Description:</label>
+                            <div class="col-sm-8 col-md-9 description">
+                                <p>@Model.Description&nbsp;</p>
+                            </div>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                        <div class="form-group row">
+                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Stock:</label>
+                            <div class="col-sm-8 col-md-9">
+                                <p>@Model.Quantity</p>
+                            </div>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+                        <div class="form-group product-stock product-available row hidden">
+                            <label class="col-sm-3 col-md-3 form-control-label"></label>
+                            <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Currency)
-        </dt>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    @Html.ActionLink("🛒 - Add to Cart", "Add", "Cart", new { id = Model.Id }, new { @class = "btn btn-carrito" })
+                                    @Html.ActionLink("← Continuar Comprando", "Index", new { }, new { @class = "btn btn-volver" })
+                                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Currency)
-        </dd>
+                            </div>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            <img src="@Url.Content(@Model.Image)" alt="Alternate Text" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    </div>
+                    <input type="hidden">
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
