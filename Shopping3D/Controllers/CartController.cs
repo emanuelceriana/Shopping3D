@@ -93,6 +93,7 @@ namespace Shopping3D.Controllers
             return RedirectToAction("Index");
         }
 
+
         private int existProduct(int id) {
             List<SaleLine> SaleLines = (List<SaleLine>)Session["Cart"];
             for (int i = 0; i < SaleLines.Count; i++) {
@@ -101,6 +102,16 @@ namespace Shopping3D.Controllers
                 }
             }
             return -1;
+        }
+        
+        
+        public ActionResult Delete(int id)
+        {
+            var sLine = (List<SaleLine>)Session["Cart"];
+            var objective = sLine.Find(item => item.Id == id);
+            sLine.Remove(objective);
+
+            return RedirectToAction("Index");
         }
     }
 }

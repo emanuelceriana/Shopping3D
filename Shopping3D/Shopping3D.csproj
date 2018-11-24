@@ -186,9 +186,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811240040065_new.cs" />
-    <Compile Include="Migrations\201811240040065_new.Designer.cs">
-      <DependentUpon>201811240040065_new.cs</DependentUpon>
+    <Compile Include="Migrations\201811240055343_new.cs" />
+    <Compile Include="Migrations\201811240055343_new.Designer.cs">
+      <DependentUpon>201811240055343_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
@@ -199,6 +199,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Shopping3D.mdf" />
+    <Content Include="App_Data\Shopping3D_log.ldf">
+      <DependentUpon>Shopping3D.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -321,11 +325,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811240040065_new.resx">
-      <DependentUpon>201811240040065_new.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811240055343_new.resx">
+      <DependentUpon>201811240055343_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
