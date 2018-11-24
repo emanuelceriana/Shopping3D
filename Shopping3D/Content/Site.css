@@ -155,6 +155,16 @@ th {
     text-decoration: none;
 }
 
+.total {
+    text-align: right;
+    margin-right: 65px;
+}
+
+.total p{
+    font-size: 20px;
+    
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

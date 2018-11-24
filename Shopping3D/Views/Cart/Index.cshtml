@@ -1,6 +1,7 @@
 ﻿@model List<Shopping3D.Models.SaleLine>
 @{
     ViewBag.Title = "Checkout";
+    decimal total = 0;
 }
 <br />
 <br />
@@ -8,6 +9,7 @@
 @if (Model != null && Model.Count != 0)
 {
 <div class="container">
+    
     <table class="table text-center">
         <thead class="thead-dark">
             <tr>
@@ -24,7 +26,7 @@
 
             @foreach (var item in Model)
             {
-
+                {total = total + item.SubTotal;}
                 <tr>
                     <td><img id="img-table" src="@Url.Content(item.Product.Image)" alt="@item.Product.Name" /></td>
                     <td>@item.Product.Name</td>
@@ -38,7 +40,10 @@
         </tbody>
     </table>
 </div>
-    <br />
+    <div class="container total">
+        <h3>Total</h3>
+        <p>$ @total</p>
+    </div>
     <br />
 <div class="container buy">
     @using (Html.BeginForm("Checkout", "Cart"))
