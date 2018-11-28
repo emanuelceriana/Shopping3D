@@ -168,6 +168,7 @@ th {
 .banner{
     border: none !important;
     border-radius: unset !important;
+    padding: 0 !important;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
