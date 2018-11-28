@@ -231,6 +231,9 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Pictures\Banner.png" />
+    <Content Include="Pictures\Banner2.svg" />
+    <Content Include="Pictures\Banner3.svg" />
     <Content Include="Pictures\logo.jpg" />
     <Content Include="Pictures\logo2.png" />
     <Content Include="Pictures\logo3.png" />
