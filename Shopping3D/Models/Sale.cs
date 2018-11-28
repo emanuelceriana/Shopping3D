@@ -8,6 +8,12 @@ namespace Shopping3D.Models
 {
     public class Sale
     {
+        /*public Sale(Client Client, decimal Total, DateTime Date) {
+            this.Client = Client;
+            this.Total = Total;
+            this.Date = Date;
+        }*/
+
         public int Id { get; set; }
         [Required]
         public decimal Total { get; set; }

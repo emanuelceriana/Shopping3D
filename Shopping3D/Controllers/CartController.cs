@@ -16,13 +16,17 @@ namespace Shopping3D.Controllers
 
         public ActionResult Index()
         {
-            return View(Session["Cart"]);
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Checkout(string email) {
+        public ActionResult Checkout([Bind(Include = "Email")] Client client) {
+            if (!ModelState.IsValid)
+            {
+                return View("Index", client);
+            }
             if (Session["Cart"] != null) {
-                Session["Client"] = email;
+                Session["Client"] = client;
                 Preference preference = new Preference();
                 foreach (var item in Session["Cart"] as List<SaleLine>)
                 {
@@ -40,12 +44,12 @@ namespace Shopping3D.Controllers
                 // Setting a payer object as value for Payer property
                 preference.Payer = new Payer()
                 {
-                    Email = email.ToString()
+                    Email = client.Email.ToString()
                 };
                 // Save and posting preference
                 BackUrls backUrls = new BackUrls();
                 backUrls.Success = "http://localhost:50266/Cart/SuccessCallback";
-                backUrls.Pending = "http://localhost:50266/Cart/PendingCallback";
+                backUrls.Pending = "http://localhost:50266/Cart/SuccessCallback";
                 backUrls.Failure = "http://localhost:50266/Cart/FailureCallback";
                 preference.BackUrls = backUrls;
                 preference.Save();
@@ -57,18 +61,31 @@ namespace Shopping3D.Controllers
 
        
         public ActionResult SuccessCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id) {
+            Client Client = (Client)Session["Client"];
+            decimal Total = 0;
             Sale Sale = new Sale();
             foreach (var SaleLine in Session["Cart"] as List<SaleLine>)
             {
-                
+                Total += SaleLine.SubTotal;
+                SaleLine.Sale = Sale;
+                db.SaleLines.Add(SaleLine);
             }
+            Sale.Client = Client;
+            Sale.Total = Total;
+            Sale.Date = DateTime.Today;
 
+            db.Clients.Add(Client);
+            db.Sales.Add(Sale);
+            db.SaveChanges();
+
+            Session["Cart"] = null;
+            Session["Client"] = null;
             return View("Index");
         }
 
-        public ActionResult PendingCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id)
+        public ActionResult FailureCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id)
         {
-            return View("Callback");
+            return View("Index");
         }
 
         // POST: Cart
