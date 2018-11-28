@@ -53,23 +53,25 @@ namespace Shopping3D.Controllers
                 backUrls.Failure = "http://localhost:50266/Cart/FailureCallback";
                 preference.BackUrls = backUrls;
                 preference.Save();
-                return Redirect(preference.SandboxInitPoint);
+                return Redirect(preference.InitPoint);
             }
-
+            
             return RedirectToAction("Index");
         }
 
        
-        public ActionResult SuccessCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id) {
+        public ActionResult SuccessCallback(string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id) {
             Client Client = (Client)Session["Client"];
             decimal Total = 0;
             Sale Sale = new Sale();
             foreach (var SaleLine in Session["Cart"] as List<SaleLine>)
             {
+                SaleLine.Product = null;
                 Total += SaleLine.SubTotal;
                 SaleLine.Sale = Sale;
                 db.SaleLines.Add(SaleLine);
             }
+
             Sale.Client = Client;
             Sale.Total = Total;
             Sale.Date = DateTime.Today;
@@ -83,7 +85,7 @@ namespace Shopping3D.Controllers
             return View("Index");
         }
 
-        public ActionResult FailureCallback(int collection_id, string collection_status, string preference_id, string external_reference, string payment_type, int merchant_order_id)
+        public ActionResult FailureCallback()
         {
             return View("Index");
         }

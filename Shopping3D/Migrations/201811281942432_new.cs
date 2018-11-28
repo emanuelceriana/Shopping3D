@@ -36,13 +36,13 @@ namespace Shopping3D.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         ProductQuantity = c.Int(nullable: false),
                         SubTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Product_Id = c.Int(nullable: false),
+                        ProductId = c.Int(nullable: false),
                         Sale_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Products", t => t.Product_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
                 .ForeignKey("dbo.Sales", t => t.Sale_Id, cascadeDelete: true)
-                .Index(t => t.Product_Id)
+                .Index(t => t.ProductId)
                 .Index(t => t.Sale_Id);
             
             CreateTable(
@@ -64,10 +64,10 @@ namespace Shopping3D.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.SaleLines", "Sale_Id", "dbo.Sales");
-            DropForeignKey("dbo.SaleLines", "Product_Id", "dbo.Products");
+            DropForeignKey("dbo.SaleLines", "ProductId", "dbo.Products");
             DropForeignKey("dbo.Sales", "Client_Id", "dbo.Clients");
             DropIndex("dbo.SaleLines", new[] { "Sale_Id" });
-            DropIndex("dbo.SaleLines", new[] { "Product_Id" });
+            DropIndex("dbo.SaleLines", new[] { "ProductId" });
             DropIndex("dbo.Sales", new[] { "Client_Id" });
             DropTable("dbo.Products");
             DropTable("dbo.SaleLines");

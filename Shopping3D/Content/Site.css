@@ -181,7 +181,7 @@ th {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 376px) {
 
     .imageTh {
         display: none;
