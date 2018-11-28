@@ -6,40 +6,43 @@
 <br />
 <br />
 
-@if (Session["Cart"] != null && ((List<Shopping3D.Models.SaleLine>) Session["Cart"]).Count != 0)
+@if (Session["Cart"] != null && ((List<Shopping3D.Models.SaleLine>)Session["Cart"]).Count != 0)
 {
-<div class="container">
-    
-    <table class="table text-center">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Image</th>
-                <th scope="col">Item</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-                <th scope="col">Total</th>
-                <th></th>
+    <div class="container">
 
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in Session["Cart"] as List<Shopping3D.Models.SaleLine>)
-            {
-                {total = total + item.SubTotal;}
+        <table class="table text-center">
+            <thead class="thead-dark">
                 <tr>
-                    <td><img id="img-table" class="rounded-circle" src="@Url.Content(item.Product.Image)" alt="@item.Product.Name" /></td>
-                    <td>@item.Product.Name</td>
-                    <td>@item.ProductQuantity</td>
-                    <td>@item.Product.Price</td>
-                    <td>@item.SubTotal</td>
-                    <td>@Html.ActionLink("X","Delete",new { @id = item.Id})</td>
-                </tr>
-            }
+                    <th class="imageTh"scope="col">Image</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th class="totalTh" scope="col">Total</th>
+                    <th></th>
 
-        </tbody>
-    </table>
-</div>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Session["Cart"] as List<Shopping3D.Models.SaleLine>)
+                {
+
+                    { total = total + item.SubTotal; }
+                    <tr>
+                        <td class="imageTd"><img id="img-table" class="rounded-circle" src="@Url.Content(item.Product.Image)" alt="@item.Product.Name" /></td>
+                        <td>@item.Product.Name</td>
+                        <td>@item.ProductQuantity</td>
+                        <td>@item.Product.Price</td>
+                        <td class="totalTd">@item.SubTotal</td>
+                        <td>@Html.ActionLink("X", "Delete", new { @id = item.Id })</td>
+                    </tr>
+
+                   
+                }
+
+            </tbody>
+        </table>
+    </div>
     <div class="container total">
         <h3>Total</h3>
         <p>$ @total</p>
@@ -58,10 +61,12 @@
 }
 else
 {
-<div class="container buy text-center">
-    <h2>Your cart is empty!</h2>
-    <br />  
-    <p>@Html.ActionLink("← Continue Shopping", "Index", "Products", new { }, new { @class = "btn btn-volver" })</p>
-</div>
+    <div class="container buy text-center">
+        <h2>Your cart is empty!</h2>
+        <br />
+        <p>@Html.ActionLink("← Continue Shopping", "Index", "Products", new { }, new { @class = "btn btn-volver" })</p>
+    </div>
+
 }
+
 

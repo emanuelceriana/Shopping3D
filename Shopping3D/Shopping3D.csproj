@@ -234,6 +234,7 @@
     <Content Include="Pictures\Banner.png" />
     <Content Include="Pictures\Banner2.svg" />
     <Content Include="Pictures\Banner3.svg" />
+    <Content Include="Pictures\Banner4.png" />
     <Content Include="Pictures\Banner4.svg" />
     <Content Include="Pictures\bruceBanner.svg" />
     <Content Include="Pictures\logo.jpg" />
@@ -243,6 +244,7 @@
     <Content Include="Pictures\logo5.png" />
     <Content Include="Pictures\logosvg.svg" />
     <Content Include="Pictures\logox.png" />
+    <Content Include="Pictures\logoy.png" />
     <Content Include="Pictures\logoy.svg" />
     <Content Include="Pictures\Products\p1.JPG" />
     <Content Include="Pictures\Products\p2.JPG" />
@@ -282,6 +284,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\responsive.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
